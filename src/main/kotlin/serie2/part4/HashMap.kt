@@ -119,20 +119,3 @@ class HashMap<K, V>(initialCapacity: Int = 16, private val loadFactor: Float = 0
         }
     }
 }
-/* USAR SIM OU NÂO????
-
-    // Implementações vazias para outros métodos obrigatórios (simplificação)
-    override fun clear() { table.fill(null); _size = 0 }
-    override fun isEmpty(): Boolean = _size == 0
-    override fun containsKey(key: K): Boolean = get(key) != null
-    override fun containsValue(value: V): Boolean {
-        for (entry in this) {
-            if (entry.value == value) return true
-        }
-        return false
-    }
-    override val keys: MutableSet<K> get() = mutableSetOf<K>().also { for (entry in this) it.add(entry.key) }
-    override val values: MutableCollection<V> get() = mutableListOf<V>().also { for (entry in this) it.add(entry.value) }
-    override val entries: MutableSet<MutableMap.MutableEntry<K, V>> get() = mutableSetOf<MutableMap.MutableEntry<K, V>>().also { for (entry in this) it.add(entry) }
-
- */
