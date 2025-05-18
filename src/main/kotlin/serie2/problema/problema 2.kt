@@ -108,9 +108,23 @@ object ProcessPointsCollection2 {
     }
 }
 
+fun criarArquivosTeste2() {
+    File("pontos1.co").printWriter().use {
+        it.println("v A 1.0 1.0")
+        it.println("v B 2.0 2.0")
+        it.println("v C 3.0 3.0")
+    }
+    File("pontos2.co").printWriter().use {
+        it.println("v C 3.0 3.0")
+        it.println("v D 4.0 4.0")
+        it.println("v E 5.0 5.0")
+    }
+}
 
 
 fun main() {
+    criarArquivosTeste2()
+
     // Mensagem de boas-vindas e instruções
     println("""Bem-vindo ao ProcessPointsCollection!
 Comandos disponíveis:
