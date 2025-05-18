@@ -5,18 +5,21 @@ import java.io.File
 // Objeto responsável por carregar, comparar e exportar pontos de dois arquivos
 object ProcessPointsCollection {
 
-    // Representação de um ponto 2D com identificador e coordenadas
+    // Representa um ponto no plano com identificador e coordenadas (x, y)
     private data class Point(val id: String, val x: Float, val y: Float) {
-        // Comparamos pontos apenas pelas coordenadas (x, y), ignorando o id
+        // Compara pontos por id, x e y (duas coordenadas iguais e mesmo id são iguais)
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (other !is Point) return false
-            return x == other.x && y == other.y
+            return id == other.id && x == other.x && y == other.y
         }
 
-        // hashCode coerente com equals (também baseado apenas em x e y)
+        // Gera um hashCode consistente com equals, baseado em id, x e y
         override fun hashCode(): Int {
-            return 31 * x.hashCode() + y.hashCode()
+            var result = id.hashCode()
+            result = 31 * result + x.hashCode()
+            result = 31 * result + y.hashCode()
+            return result
         }
     }
 
