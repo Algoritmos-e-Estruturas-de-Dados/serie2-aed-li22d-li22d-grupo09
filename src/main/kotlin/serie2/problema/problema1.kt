@@ -2,7 +2,7 @@ package serie2.problema
 
 import java.io.File
 
-// Objeto responsável por carregar, comparar e exportar pontos de dois arquivos
+
 object ProcessPointsCollection {
 
     // Representa um ponto no plano com identificador e coordenadas (x, y)
