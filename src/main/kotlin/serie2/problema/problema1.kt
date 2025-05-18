@@ -12,7 +12,10 @@ object ProcessPointsCollection {
         }
 
         override fun hashCode(): Int {
-            return 31 * x.hashCode() + y.hashCode()
+            var result = id.hashCode()
+            result = 31 * result + x.hashCode()
+            result = 31 * result + y.hashCode()
+            return result
         }
     }
 

@@ -4,7 +4,8 @@ import java.io.File
 import serie2.part4.HashMap
 
 object ProcessPointsCollectionsCustom2 {
-    private data class Point(val id: String, val x: Double, val y: Double) {
+    // Agora x e y são do tipo Float
+    private data class Point(val id: String, val x: Float, val y: Float) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (other !is Point) return false
@@ -19,7 +20,6 @@ object ProcessPointsCollectionsCustom2 {
         }
     }
 
-    // Using our custom HashMap implementation
     private val pointsMap = HashMap<Point, BooleanArray>()
 
     fun load(file1: String, file2: String) {
@@ -37,8 +37,8 @@ object ProcessPointsCollectionsCustom2 {
                         val parts = line.split(' ')
                         if (parts.size >= 4) {
                             val id = parts[1]
-                            val x = parts[2].toDouble()
-                            val y = parts[3].toDouble()
+                            val x = parts[2].toFloat() // MUDANÇA AQUI
+                            val y = parts[3].toFloat() // E AQUI
                             val point = Point(id, x, y)
 
                             val existing = pointsMap[point]
@@ -52,9 +52,8 @@ object ProcessPointsCollectionsCustom2 {
                             }
                         }
                     }
-                    // Ignore comments and problem lines
-                    line.startsWith("c ") || line.startsWith("p ") -> {}
-                    else -> {} // Ignore malformed lines
+                    line.startsWith("c ") || line.startsWith("p ") -> {} // Ignorar comentários
+                    else -> {} // Ignorar linhas malformadas
                 }
             }
         }
@@ -88,7 +87,6 @@ object ProcessPointsCollectionsCustom2 {
         }
     }
 }
-
 
 
 fun main() {
