@@ -11,16 +11,13 @@ object ProcessPointsCollection2 {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (other !is Point) return false
-            return id == other.id && x == other.x && y == other.y
+            return x == other.x && y == other.y
         }
 
-        // Gera um hashCode consistente com equals, baseado em id, x e y
         override fun hashCode(): Int {
-            var result = id.hashCode()
-            result = 31 * result + x.hashCode()
-            result = 31 * result + y.hashCode()
-            return result
+            return 31 * x.hashCode() + y.hashCode()
         }
+
     }
 
     // Mapa que associa cada ponto a um vetor de 2 posições booleanas:
@@ -120,6 +117,7 @@ fun criarArquivosTeste2() {
         it.println("v E 5.0 5.0")
     }
 }
+
 
 
 fun main() {
