@@ -104,17 +104,38 @@ object ProcessPointsCollection {
     }
 }
 
+fun criarArquivosTeste() {
+    File("pontos1.co").printWriter().use {
+        it.println("v A 1.0 1.0")
+        it.println("v B 2.0 2.0")
+        it.println("v C 3.0 3.0")
+    }
+    File("pontos2.co").printWriter().use {
+        it.println("v C 3.0 3.0")
+        it.println("v D 4.0 4.0")
+        it.println("v E 5.0 5.0")
+    }
+}
+
+
 
 fun main() {
-    // Mensagem de boas-vindas e instruções
-    println("""Bem-vindo ao ProcessPointsCollection!
-            Comandos disponíveis:
-            - load <file1.co> <file2.co>       // Carrega os ficheiros de entrada
-            - union <output.co>                // Exporta a união dos pontos
-            - intersection <output.co>         // Exporta a interseção dos pontos
-            - difference <output.co>           // Exporta a diferença dos pontos
-            - exit                             // Sai do programa
-            """)
+    criarArquivosTeste()
+
+// Mensagem de boas-vindas e instruções
+println("""Bem-vindo ao ProcessPointsCollection!
+Comandos disponíveis:
+- load <file1.co> <file2.co>       
+- union <output.co>                
+- intersection <output.co>         
+- difference <output.co> 
+- exit       
+""")
+// Carrega os ficheiros de entrada
+// Exporta a união dos pontos
+// Exporta a interseção dos pontos
+// Exporta a diferença dos pontos
+// Sai do programa
 
     // Loop principal: lê comandos do utilizador repetidamente
     while (true) {
