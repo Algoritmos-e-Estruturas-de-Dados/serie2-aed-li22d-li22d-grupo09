@@ -7,7 +7,7 @@ object ProcessPointsCollection2 {
 
     // Representa um ponto no plano com identificador e coordenadas (x, y)
     private data class Point(val id: String, val x: Float, val y: Float) {
-        // Compara pontos por id, x e y (duas coordenadas iguais e mesmo id são iguais)
+
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (other !is Point) return false
