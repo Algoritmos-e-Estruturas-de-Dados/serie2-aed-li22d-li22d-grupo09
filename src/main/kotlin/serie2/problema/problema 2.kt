@@ -113,13 +113,13 @@ object ProcessPointsCollection2 {
 fun main() {
     // Mensagem de boas-vindas e instruções
     println("""Bem-vindo ao ProcessPointsCollection!
-Comandos disponíveis:
-- load <file1.co> <file2.co>       // Carrega os ficheiros de entrada
-- union <output.co>                // Exporta a união dos pontos
-- intersection <output.co>         // Exporta a interseção dos pontos
-- difference <output.co>           // Exporta a diferença dos pontos
-- exit                             // Sai do programa
-""")
+            Comandos disponíveis:
+            - load <file1.co> <file2.co>       // Carrega os ficheiros de entrada
+            - union <output.co>                // Exporta a união dos pontos
+            - intersection <output.co>         // Exporta a interseção dos pontos
+            - difference <output.co>           // Exporta a diferença dos pontos
+            - exit                             // Sai do programa
+            """)
 
     // Loop principal: lê comandos do utilizador repetidamente
     while (true) {
